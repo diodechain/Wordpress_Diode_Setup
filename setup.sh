@@ -99,6 +99,9 @@ sed -i '/begin_insert_here/r /tmp/wp.keys' /srv/www/wordpress/wp-config.php
 sed -i "s/begin_insert_here//" /srv/www/wordpress/wp-config.php
 rm /tmp/wp.keys
 
+#ensure diode script deps
+apt install unzip
+
 #install diode and publish new site
 curl -Ssf https://diode.io/install.sh | sh
 export PATH=/root/opt/diode:$PATH
